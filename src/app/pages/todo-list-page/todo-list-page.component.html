@@ -1,0 +1,18 @@
+<div>
+  <app-form (outEnterTitle)="addTodo($event)" />
+  <h2 class="c">Список задач</h2>
+  <hr>
+  <div class="TodoList">
+    <app-todo
+      *ngFor="let todo of todoList"
+      [todo]="todo"
+      (outDeleteId)="deleteTodo($event)"
+      (click)="onSelectTodo(todo)"
+      [class.Selected]="todo === selectedTodo"
+    />
+  </div>
+  <app-update-menu
+    *ngIf="selectedTodo"
+    (outOnSelectedTodo)="updateTodo(selectedTodo.id, $event)"
+  />
+</div>

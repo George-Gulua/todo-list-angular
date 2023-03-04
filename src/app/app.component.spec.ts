@@ -23,13 +23,13 @@ describe('AppComponent', () => {
   it(`should have as title 'angolar-todo'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('angolar-todo');
+    expect(app.title).toEqual('angular-todo');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('angolar-todo app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('angular-todo app is running!');
   });
 });

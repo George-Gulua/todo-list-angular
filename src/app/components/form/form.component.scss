@@ -1,0 +1,21 @@
+.Input {
+  padding: 20px;
+  margin-right: 20px;
+  outline: 0;
+  border: 2px solid black;
+  border-radius: 8px;
+}
+
+.Button {
+  border: 2px solid black;
+  padding: 12px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: .3s;
+
+  &:hover {
+    background: black;
+    color: white;
+    transform: scale(1.1);
+  }
+}
