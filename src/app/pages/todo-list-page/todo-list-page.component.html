@@ -7,8 +7,8 @@
       *ngFor="let todo of todoList"
       [todo]="todo"
       (outDeleteId)="deleteTodo($event)"
+      (outIsComplete)="onComplete(todo.id, $event)"
       (click)="onSelectTodo(todo)"
-      [class.Selected]="todo === selectedTodo"
     />
   </div>
   <app-update-menu

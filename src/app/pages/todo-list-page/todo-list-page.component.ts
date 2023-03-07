@@ -28,18 +28,24 @@ export class TodoListPageComponent implements OnInit{
   }
 
   public addTodo(title: string): void {
-    this.todoService.addTodo(title)
-    this.getTodos()
+    if (title) {
+      this.todoService.addTodo(title)
+      this.getTodos()
+    }
   }
 
-  public updateTodo(id: number, newTitle: string): void {
+  public updateTodo(id: string, newTitle: string): void {
     this.todoService.updateTodo(id, newTitle)
     this.selectedTodo = null
     this.getTodos()
   }
 
-  public deleteTodo(id: number): void {
+  public deleteTodo(id: string): void {
     this.todoService.deleteTodo(id)
     this.getTodos()
+  }
+
+  public onComplete(id: string, isCompleted: boolean) {
+    this.todoService.onComplete(id, isCompleted)
   }
 }

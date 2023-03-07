@@ -8,3 +8,17 @@
   border-radius: 8px;
   background: white;
 }
+
+.Checkbox {
+  width: 24px;
+  height: 24px;
+}
+
+.Actions {
+  display: flex;
+  align-items: center;
+}
+
+.Done {
+  text-decoration: line-through;
+}

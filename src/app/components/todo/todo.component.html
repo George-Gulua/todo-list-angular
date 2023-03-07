@@ -1,6 +1,7 @@
 <div class="Todo">
-  <p>{{todo.title}}</p>
-  <div>
+  <p [ngClass]="{'Done': todo.isCompleted}">{{todo.title}}</p>
+  <div class="Actions">
+    <input class="Checkbox" type="checkbox" (change)="getIsComplete(!todo.isCompleted)" [checked]="todo.isCompleted">
     <button (click)="getDeleteId(todo.id)">Удалить</button>
   </div>
 </div>

@@ -8,9 +8,15 @@ import { Todo } from '../../models/todo'
 })
 export class TodoComponent {
   @Input() todo: Todo
-  @Output() outDeleteId = new EventEmitter<number>()
+  @Output() outDeleteId = new EventEmitter<string>()
+  @Output() outIsComplete = new EventEmitter<boolean>()
 
-  public getDeleteId(id: number): void {
+  public getDeleteId(id: string): void {
     this.outDeleteId.emit(id)
+  }
+
+  public getIsComplete(isCompleted: boolean) {
+    this.todo.isCompleted = isCompleted
+    this.outIsComplete.emit(isCompleted)
   }
 }
