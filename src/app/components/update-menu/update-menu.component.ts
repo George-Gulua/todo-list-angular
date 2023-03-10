@@ -1,5 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {Todo} from "../../models/todo";
+import {Component, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'app-update-menu',
@@ -7,9 +6,9 @@ import {Todo} from "../../models/todo";
   styleUrls: ['./update-menu.component.scss']
 })
 export class UpdateMenuComponent {
-  @Output() outOnSelectedTodo = new EventEmitter<string>()
+  @Output() outUpdatedTitle = new EventEmitter<string>()
 
   public getNewTitle(newTitleInput: HTMLInputElement) {
-    this.outOnSelectedTodo.emit(newTitleInput.value)
+    this.outUpdatedTitle.emit(newTitleInput.value)
   }
 }

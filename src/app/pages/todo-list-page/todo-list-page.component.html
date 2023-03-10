@@ -8,11 +8,11 @@
       [todo]="todo"
       (outDeleteId)="deleteTodo($event)"
       (outIsComplete)="onComplete(todo.id, $event)"
-      (click)="onSelectTodo(todo)"
+      (outSelectedTodo)="onSelectTodo($event)"
     />
   </div>
   <app-update-menu
     *ngIf="selectedTodo"
-    (outOnSelectedTodo)="updateTodo(selectedTodo.id, $event)"
+    (outUpdatedTitle)="updateTodo(selectedTodo.id, $event)"
   />
 </div>
